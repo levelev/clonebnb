@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
 
  # POST /listings/:listing_id/bookings
  # POST to create
- def create
+  def create
     @listing = Listing.find(params[:listing_id])
     @booking = Booking.new(booking_params)
     @booking.listing = @listing
