@@ -15,6 +15,7 @@ class ListingsController < ApplicationController
       redirect_to listing_path(@listing)
     else
       render 'new'
+    end
   end
 
   def new
@@ -29,6 +30,7 @@ class ListingsController < ApplicationController
       redirect_to @listing
     else
       render 'edit'
+    end
   end
 
   private

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   # get 'listings/update'
 
-  resources :listings, only: [:index, :show, :new, :edit, :update, :create]
+  resources :listings, except: [:destroy]
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
