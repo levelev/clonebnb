@@ -1,2 +1,32 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="searchbar">
+  <form class="form-inline">
+
+    <!-- Magnifying glass icon -->
+    <i class="fa fa-search magnifying-glass" aria-hidden="true"></i>
+
+    <!-- Search Input -->
+    <label class="sr-only" for="inlineFormInputSearch">Search</label>
+    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 searchfield" id="inlineFormInputSearch" placeholder="Search for service">
+
+    <!-- Category Selector -->
+    <select class="form-control" id="inlineFormCustomSelectCategory">
+      <option selected>Category</option>
+      <option value="Handwerksleistungen">Handwerksleistungen</option>
+      <option value="Reinigung">Reinigung</option>
+      <option value="Umzüge">Umzüge</option>
+    </select>
+
+    <!-- City Selector-->
+    <label class="sr-only" for="inlineFormInputSearch">Search</label>
+    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputSearch" placeholder="City">
+
+    <!-- Price Selector-->
+    <label class="sr-only" for="inlineFormInputPrice">Price</label>
+    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputPrice" placeholder="Max. price">
+
+    <!-- Submit Button-->
+    <button type="submit" class="btn btn-primary button-search">Submit</button>
+  </form>
+</div>
+
+
