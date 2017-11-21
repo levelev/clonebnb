@@ -1,23 +1,15 @@
 
-<p>
-  <strong>Title:</strong>
+<h2>
   <%= @listing.title %>
-</p>
+</h2>
 
-<p>
-  <strong>Category:</strong>
-  <%= @listing.category %>
-</p>
+<h2>
+  <%= @listing.price %>€
+</h2>
 
 <p>
   <strong>Description:</strong>
   <%= @listing.description %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @listing.city %>
-  <%= @listing.zip %>
 </p>
 
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
