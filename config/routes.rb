@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  devise_for :views
   resources :listings, except: [:destroy]
   resources :bookings, only: [:show, :new, :create]
   devise_for :users,
