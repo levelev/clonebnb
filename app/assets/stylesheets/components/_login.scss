@@ -1,5 +1,5 @@
 /* Styles for Devise */
-.sessions {
+.sessions, .registrations, .passwords{
   // color: white;
   // text-align: center;
   height: 100vh;
@@ -38,8 +38,9 @@ height: calc(100vh - 70px);
 
   margin-bottom: 20px;
 }
-// .sessions > .simple_form {
-//   background: white;
-// }
 
 
+.help-block {
+  font-size: 14px;
+  text-align: center;
+}
