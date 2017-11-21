@@ -4,9 +4,10 @@
   background-color: white;
   color: grey;
   font-size: 25px;
-  text-align: center;
-  padding: 50px;
   margin: 10px;
+  height: 250px;
+  width: 250px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
 
 #map {
@@ -19,4 +20,87 @@
 
 .main-container {
   display: flex;
+}
+
+.cards-container {
+  flex: 0 0 70%;
+  padding-top: 10px;
+  position: relative;
+}
+
+.container-picture {
+  height: 130px;
+}
+
+.card-picture {
+  width: 100%;
+  height: auto;
+  padding-top: 3px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.card-price {
+  position: absolute;
+  width: 50px;
+  height: 20px;
+  top: 20px;
+  left: 225px;
+  background-color: #91C4F2;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.card-location {
+  position: absolute;
+  top: 45px;
+  left: 180px;
+  color: grey;
+  font-size: 14px;
+  width: 90px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.card-zip {
+  position: absolute;
+  top: 65px;
+  left: 180px;
+  color: grey;
+  font-size: 14px;
+  width: 90px;
+  text-align: right;
+  font-weight: normal;
+}
+
+.card-info {
+  background-color: white;
+  width: 250px;
+  height: 100px;
+  position: absolute;
+  top: 160px;
+}
+
+.card-title {
+  position: absolute;
+  font-size: 14px;
+  text-align: left;
+  font-weight: bold;
+  top: 3px;
+  left: 10px;
+  background-color: white;
+}
+
+.card-description {
+  position: absolute;
+  font-size: 12px;
+  text-align: left;
+  top: 26px;
+  left: 10px;
+  width: 238px;
+  height: 40px;
+  background-color: white;
 }
