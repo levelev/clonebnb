@@ -1,16 +1,4 @@
-<%= simple_form_for(@listing) do |f| %>
-  <%= f.error_notification %>
+<h1>Create a New Listing</h1>
+<%= render 'form', listing: @listing %>
 
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :category %>
-    <%= f.input :description %>
-    <%= f.input :city %>
-    <%= f.input :zip %>
-    <%= f.input :price %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+<%= link_to 'Cancel', listings_path %>
