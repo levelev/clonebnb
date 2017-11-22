@@ -11,15 +11,16 @@
 }
 
 
-.wrapper {
+.listings .wrapper {
   background-image:
     /* Transparent gradient above */
     linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 50%),
     /* Then image below */
     image-url('berlin.jpg');
-  background-repeat: no-repeat;
-  background-size: 100% 75%;
-}
+    background-repeat: no-repeat;
+    background-size: cover !important;
+    height: 100vh;
+  }
 
 
 

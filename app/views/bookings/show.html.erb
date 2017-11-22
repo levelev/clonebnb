@@ -1,2 +1,19 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>Your Booking</h1>
+        <ul>
+          <li>You booked service: <%= link_to @booking.listing.title, listing_path %></li>
+          <li>From seller: <%= @booking.seller %></li>
+          <li>Start date: <%= @booking.start_date %></li>
+          <li>End Date: <%= @booking.end_date %></li>
+          <li>Your address: <%= @booking.address %></li>
+        </ul>
+        <%= link_to 'Home', root_path %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
