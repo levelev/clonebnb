@@ -1,69 +1,49 @@
 <div class="searchbar">
-  <form class="form-inline">
-
-    <!-- Magnifying glass icon -->
-    <i class="fa fa-search magnifying-glass" aria-hidden="true"></i>
-
-    <!-- Search Input -->
-    <label class="sr-only" for="inlineFormInputSearch">Search</label>
-    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 searchfield" id="inlineFormInputSearch" placeholder="Search for service">
-
-    <!-- Category Selector -->
-    <select class="form-control" id="inlineFormCustomSelectCategory">
-      <option selected>Category</option>
-      <option value="Handwerksleistungen">Handwerksleistungen</option>
-      <option value="Reinigung">Reinigung</option>
-      <option value="Umzüge">Umzüge</option>
-    </select>
-
-    <!-- City Selector-->
-    <label class="sr-only" for="inlineFormInputSearch">Search</label>
-    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputSearch" placeholder="City">
-
-    <!-- Price Selector-->
-    <label class="sr-only" for="inlineFormInputPrice">Price</label>
-    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputPrice" placeholder="Max. price">
-
-    <!-- Submit Button-->
-    <button type="submit" class="btn btn-primary button-search">Submit</button>
-  </form>
+  <!-- Magnifying glass icon -->
+  <%= simple_form_for(:search, url: root_path, method: :get, html: { class: 'form-inline' }) do |f| %>
+  <i class="fa fa-search magnifying-glass" aria-hidden="true"></i>
+  <%= f.input :title, label: false, placeholder: 'Search', value: params[:search][:title] %>
+    <%= f.input :category, collection: [['Please select category',''], ['Handwerksleistungen', 'Handwerksleistungen'], ['Reinigung', 'Reinigung'], ['Umzüge', 'Umzüge']], label: false, selected: params[:search][:category] %>
+  <%= f.input :city, label: false, placeholder: 'City', value: params[:search][:city] %>
+  <%= f.input :price, label: false, placeholder: 'Max. price', value: params[:search][:price] %>
+  <%= f.submit 'Search', class: 'btn btn-primary button-search' %>
+  <% end %>
 </div>
+
 
 <div class="main-container">
 
-<div class="cards-container">
+  <div class="cards-container">
     <div class="row">
 
-<% @listings.each do |displaycard| %>
+      <% @listings.each do |displaycard| %>
 
       <div class="col-xs-12 col-sm-6 col-md-4">
         <%= link_to listing_path(displaycard) do %>
         <div class="card">
-        <div class="container-picture">
+          <div class="container-picture">
            <%= image_tag("/assets/default-#{rand(15)}.JPG", class: "card-picture") %>
          </div>
          <div class="card-price">
-            <p><%= displaycard.price %> €</p>
-          </div>
-          <div class="card-info">
-            <p class="card-title"><%= displaycard.title  %></p>
-            <div class="card-description"> <p><%= displaycard.description %></p></div>
-          </div>
-         </div>
-         <% end %>
+          <p><%= displaycard.price %> €</p>
+        </div>
+        <div class="card-info">
+          <p class="card-title"><%= displaycard.title  %></p>
+          <div class="card-description"> <p><%= displaycard.description %></p></div>
+        </div>
       </div>
       <% end %>
-
-
-
     </div>
+    <% end %>
+
   </div>
+</div>
 
-  <div id="map"></div>
+<div id="map"></div>
 
-  <!-- Gmaps js: building the map -->
-  <script>
-    function initMap() {
+<!-- Gmaps js: building the map -->
+<script>
+  function initMap() {
         // Create a map object and specify the DOM element for display.
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 52.5206, lng: 13.4098},
