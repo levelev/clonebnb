@@ -4,7 +4,7 @@
       <div class="col-xs-12">
         <h1>Your Booking</h1>
         <ul>
-          <li>You booked service: <%= @booking.listing.title %></li>
+          <li>You booked service: <%= link_to @booking.listing.title, listing_path %></li>
           <li>From seller: <%= @booking.seller %></li>
           <li>Start date: <%= @booking.start_date %></li>
           <li>End Date: <%= @booking.end_date %></li>
@@ -15,3 +15,5 @@
     </div>
   </div>
 </div>
+
+
