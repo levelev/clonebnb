@@ -1,2 +1,18 @@
-<h1>Listings#show</h1>
-<p>Find me in app/views/listings/show.html.erb</p>
+
+<h2>
+  <%= @listing.title %>
+</h2>
+
+<h2>
+  <%= @listing.price %>€
+</h2>
+
+<%= cl_image_tag @listing.photo %>
+
+<p>
+  <strong>Description:</strong>
+  <%= @listing.description %>
+</p>
+
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>
