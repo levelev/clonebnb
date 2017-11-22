@@ -40,7 +40,7 @@
         <%= link_to listing_path(displaycard) do %>
         <div class="card">
         <div class="container-picture">
-           <img class="card-picture" src="https://i.ebayimg.com/00/s/MjI1WDMwMA==/z/HLgAAOSwFb5aFETf/$_72.JPG" alt="Selfhtml">
+           <%= image_tag("/assets/default-#{rand(15)}.JPG", class: "card-picture") %>
          </div>
          <div class="card-price">
             <p><%= displaycard.price %> €</p>
