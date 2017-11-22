@@ -26,6 +26,7 @@ end
     zip: %w(10103 11342 19343 13423 14035 10352).sample,
     city: "Berlin",
     category: %w(Handwerksleistungen Umzüge Reinigung).sample,
-    user_id: rand(1..10)
+    user_id: rand(1..10),
+    remote_photo_url: "https://picsum.photos/200/300/?random"
     )
 end

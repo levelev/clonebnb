@@ -22,7 +22,7 @@
         <%= link_to listing_path(displaycard) do %>
         <div class="card">
           <div class="container-picture">
-           <%= image_tag("/assets/default-#{rand(15)}.JPG", class: "card-picture") %>
+           <%= cl_image_tag displaycard.photo, :class=>"card-picture" %>
          </div>
          <div class="card-price">
           <p><%= displaycard.price %> €</p>
