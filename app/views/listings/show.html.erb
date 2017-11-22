@@ -1,18 +1,35 @@
+<div class="wrapper">
+  <div class="container">
 
-<h2>
-  <%= @listing.title %>
-</h2>
+    <div class="box">
+      <div class="row">
+        <div class="col-md-6">
+          <%= cl_image_tag @listing.photo, size: "450x450"%>
+        </div>
 
-<h2>
-  <%= @listing.price %>€
-</h2>
 
-<%= cl_image_tag @listing.photo %>
+        <div class="col-md-6">
 
-<p>
-  <strong>Description:</strong>
-  <%= @listing.description %>
-</p>
+          <h2>
+            <%= @listing.title %>
+          </h2>
 
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
-<%= link_to 'Back', listings_path %>
+          <h2>
+            <%= @listing.price %>€
+          </h2>
+
+          <p>
+            <strong>Description:</strong>
+            <%= @listing.description %>
+          </p>
+          <%= render "booking_form" %>
+
+          <%= link_to 'Edit', edit_listing_path(@listing) %>
+          <%= link_to 'Back', listings_path %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
