@@ -14,6 +14,7 @@ gem 'omniauth-facebook'
 
 
 
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
@@ -29,5 +30,4 @@ group :development, :test do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 end
