@@ -29,4 +29,45 @@
   </form>
 </div>
 
+<div class="main-container">
 
+  <div class="cards-container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card">
+          <div class="container-picture">
+            <img class="card-picture" src="https://i.ebayimg.com/00/s/MjI1WDMwMA==/z/HLgAAOSwFb5aFETf/$_72.JPG" alt="Selfhtml">
+          </div>
+          <div class="card-price">
+            <p>1000 €</p>
+          </div>
+          <div class="card-info">
+            <p class="card-title">Best house cleaning in Berlin</p>
+            <div class="card-description"><p>We offer for free... We offer for free... We offer for free... We offer for free... We offer for free... </p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="map"></div>
+
+  <!-- Gmaps js: building the map -->
+  <script>
+    function initMap() {
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 52.5206, lng: 13.4098},
+          scrollwheel: false,
+          zoom: 14
+        });
+      }
+    </script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Gmaps JavaScript -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzER7O10ZOUp7FloJzMe2r8X1GIQhgt7Q&callback=initMap">
+  </script>
