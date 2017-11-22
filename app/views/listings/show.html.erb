@@ -3,12 +3,12 @@
 
     <div class="box">
       <div class="row">
-        <div class="col-xs-6">
+        <div class="col-md-6">
           <%= cl_image_tag @listing.photo, size: "450x450"%>
         </div>
 
 
-        <div class="col-xs-6">
+        <div class="col-md-6">
 
           <h2>
             <%= @listing.title %>
@@ -22,6 +22,7 @@
             <strong>Description:</strong>
             <%= @listing.description %>
           </p>
+          <%= render "booking_form" %>
 
           <%= link_to 'Edit', edit_listing_path(@listing) %>
           <%= link_to 'Back', listings_path %>
