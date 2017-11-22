@@ -31,22 +31,31 @@
 
 <div class="main-container">
 
-  <div class="cards-container">
+<div class="cards-container">
     <div class="row">
+
+<% @listings.each do |displaycard| %>
+
       <div class="col-xs-12 col-sm-6 col-md-4">
+        <%= link_to listing_path(displaycard) do %>
         <div class="card">
-          <div class="container-picture">
-            <img class="card-picture" src="https://i.ebayimg.com/00/s/MjI1WDMwMA==/z/HLgAAOSwFb5aFETf/$_72.JPG" alt="Selfhtml">
-          </div>
-          <div class="card-price">
-            <p>1000 €</p>
+        <div class="container-picture">
+           <img class="card-picture" src="https://i.ebayimg.com/00/s/MjI1WDMwMA==/z/HLgAAOSwFb5aFETf/$_72.JPG" alt="Selfhtml">
+         </div>
+         <div class="card-price">
+            <p><%= displaycard.price %> €</p>
           </div>
           <div class="card-info">
-            <p class="card-title">Best house cleaning in Berlin</p>
-            <div class="card-description"><p>We offer for free... We offer for free... We offer for free... We offer for free... We offer for free... </p></div>
+            <p class="card-title"><%= displaycard.title  %></p>
+            <div class="card-description"> <p><%= displaycard.description %></p></div>
           </div>
-        </div>
+         </div>
+         <% end %>
       </div>
+      <% end %>
+
+
+
     </div>
   </div>
 
