@@ -23,9 +23,13 @@
             <%= @listing.description %>
           </p>
           <%= render "booking_form" %>
+          <div class="page-element">
 
-          <%= link_to 'Edit', edit_listing_path(@listing) %>
-          <%= link_to 'Back', listings_path %>
+            <%= link_to root_path do%>
+            <%= fa_icon "arrow-left" %>Back
+            <% end %>
+
+          </div>
         </div>
 
       </div>
