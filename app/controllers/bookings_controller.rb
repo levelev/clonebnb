@@ -14,8 +14,7 @@ class BookingsController < ApplicationController
     @listing = Listing.find(params[:listing_id])
     @booking = Booking.new(booking_params)
     @booking.listing = @listing
-
-
+    @booking.user = current_user
 
     if @booking.save
       # Redirect to Booking success

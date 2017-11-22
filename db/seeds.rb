@@ -9,6 +9,16 @@
 require 'faker'
 
 10.times do
+  u = User.create!(
+    name: Faker::Name.name,
+    email: Faker::Internet.email,
+    password: Faker::Crypto.md5
+
+    )
+end
+
+
+10.times do
   r = Listing.create!(
     title: Faker::SiliconValley.app,
     price: Faker::Number.number(2),
@@ -16,5 +26,6 @@ require 'faker'
     zip: %w(10103 11342 19343 13423 14035 10352).sample,
     city: "Berlin",
     category: %w(Handwerksleistungen Umzüge Reinigung).sample,
+    user_id: rand(1..10)
     )
 end
