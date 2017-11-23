@@ -42,9 +42,8 @@ end
     zip: @babysitter.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_babysitter + 1}]/article/section[3]/text()[1]").text.strip.to_i,
     city: "Berlin",
     category: "Child Care",
-    user_id: rand(1..10)
-#    photo: nil,
+    user_id: rand(1..10),
+    remote_photo_url: @babysitter.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_babysitter + 1}]/article/section[1]/div").attr("data-imgsrc").try(:value).try(:gsub, "9.JPG", "72.JPG"),
     )
   @identifier_babysitter += 1
 end
-
