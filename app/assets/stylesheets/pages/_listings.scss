@@ -1,0 +1,75 @@
+.banner-background {
+  background-image:
+    /* Transparent gradient above */
+    linear-gradient(to top, rgba(0,0,0,1) 25%, rgba(0,0,0,0.6) 50%),
+    /* Then image below */
+    image-url('city_black_white.jpg');
+    background-repeat: no-repeat;
+    background-size: cover !important;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .starter {
+    color: white;
+
+    font-size: 25px;
+    font-weight: lighter;
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  .starter:hover {
+    font-size: 25px;
+    text-decoration: none;
+    color: white;
+    font-weight: lighter;
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  }
+  .banner-background p {
+    font-size: 25px;
+    font-weight: lighter;
+    color: rgb(255, 255, 255);
+    opacity: 0.6;
+    margin-bottom: 30px;
+  }
+
+
+
+
+
+
+
+  .footer {
+  // background: #F4F4F4;
+  display: flex;
+  position: absolute;
+  bottom: 1px;
+  left: 25%;
+
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 50px;
+  color: rgba(255,255,255,1);
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: white;
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 30px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-heart {
+  color: #D23333;
+}

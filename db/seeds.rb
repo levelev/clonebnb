@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
+require 'nokogiri'
+require 'open-uri'
 
 10.times do
   u = User.create!(
@@ -17,18 +19,42 @@ require 'faker'
     )
 end
 
+# Store URLs in variables
+
+@babysitter = Nokogiri::HTML(open('https://www.ebay-kleinanzeigen.de/s-babysitter-kinderbetreuung/berlin/anzeige:angebote/c290l3331'))
+@repairs = Nokogiri::HTML(open('https://www.ebay-kleinanzeigen.de/s-haus-garten/reparaturen/berlin/anzeige:angebote/c291l3331+dienstleistungen_haus_garten.art_s:reparaturen'))
+@cleaning = Nokogiri::HTML(open('https://www.ebay-kleinanzeigen.de/s-haus-garten/reingungsservice/berlin/anzeige:angebote/c291l3331+dienstleistungen_haus_garten.art_s:reingungsservice'))
+
+# Define enummeraters for parsing per category
+
+@identifier_babysitter = 1
+@identifier_repairs = 1
+@identifier_repairs = 1
+
+# Parsing per category and storage in string
 
 10.times do
+  @identifier_babysitter = 1 if @identifier_babysitter == 10
   r = Listing.create!(
-    title: Faker::SiliconValley.app,
-    price: Faker::Number.number(2),
-    description: Faker::SiliconValley.motto,
-    zip: %w(10103 10169 10178 10352).sample,
+
+    title: @babysitter.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_babysitter + 1}]/article/section[2]/h2").text.strip,
+    price: @babysitter.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_babysitter + 1}]/article/section[3]/strong").text.strip,
+    description: @babysitter.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_babysitter + 1}]/article/section[2]/p[1]/text()").text.strip,
+    zip: @babysitter.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_babysitter + 1}]/article/section[3]/text()[1]").text.strip.to_i,
     city: "Berlin",
-    category: %w(Handwerksleistungen Umzüge Reinigung).sample,
+
+    category: "Child Care",
     user_id: rand(1..10),
-    remote_photo_url: "https://picsum.photos/200/300/?random",
+
+
+    r.address = "#{r.zip} #{r.city} Germany"
+    r.save
+
+    remote_photo_url: @babysitter.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_babysitter + 1}]/article/section[1]/div").attr("data-imgsrc").try(:value).try(:gsub, "9.JPG", "72.JPG"),
+
     )
     r.address = "#{r.zip} #{r.city} Germany"
     r.save
+  @identifier_babysitter += 1
+
 end
