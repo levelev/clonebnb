@@ -5,25 +5,13 @@ class ListingsController < ApplicationController
     @listings = Listing.all
   end
 
-
-  # def index
-  #     @listings = Listing.where.not(latitude: nil, longitude: nil)
-
-
-  #     @markers = Gmaps4rails.build_markers(@listing) do |listing, marker|
-  #       marker.lat listing.latitude
-  #       marker.lng listing.longitude
-  #       # marker.infowindow render_to_string(partial: "/listings/map_box", locals: { listing: listing })
-  #     end
-  # end
-
   def show
   end
 
   def create
     @listing = Listing.new(listing_params)
     @listing.user_id = current_user.id
-
+    @listing.address = "#{@listing.zip} #{@listing.city} Germany"
     if @listing.save
       redirect_to listing_path(@listing)
     else
@@ -45,6 +33,8 @@ class ListingsController < ApplicationController
       render 'edit'
     end
   end
+
+
 
   private
 
