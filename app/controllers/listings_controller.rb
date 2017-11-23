@@ -11,7 +11,7 @@ class ListingsController < ApplicationController
   def create
     @listing = Listing.new(listing_params)
     @listing.user_id = current_user.id
-
+    @listing.address = "#{@listing.zip} #{@listing.city} Germany"
     if @listing.save
       redirect_to listing_path(@listing)
     else
@@ -33,6 +33,8 @@ class ListingsController < ApplicationController
       render 'edit'
     end
   end
+
+
 
   private
 
