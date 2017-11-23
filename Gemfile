@@ -11,7 +11,7 @@ gem 'devise'
 gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
 gem 'omniauth-facebook'
-
+gem 'pg_search'
 
 
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
