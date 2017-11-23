@@ -9,7 +9,9 @@
 
     <!-- Title -->
     <div id="title">
+
       <h2>| Find Local Services</h2>
+
     </div>
 
   </div>
@@ -27,7 +29,7 @@
    <!-- Avatar with dropdown menu -->
    <div class="navbar-wagon-item">
     <div class="dropdown">
-      <%= image_tag current_user.facebook_picture_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+      <%= image_tag current_user.facebook_picture_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" if current_user.facebook_picture_url %>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li>
           <%= link_to "#" do %>

@@ -4,7 +4,7 @@
   background: white;
   padding: 2em;
   margin: 2em;
-  box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.4);
   img {
     width: 100%;
   }
@@ -12,14 +12,15 @@
 
 
 .berlin-background {
-  background-image:
-    /* Transparent gradient above */
-    linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 50%),
-    /* Then image below */
-    image-url('berlin.jpg');
-    background-repeat: no-repeat;
-    background-size: cover !important;
+  // background-image:
+  //   /* Transparent gradient above */
+  //   linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 50%),
+  // //   /* Then image below */
+  // //   image-url('berlin.jpg');
+  //   background-repeat: no-repeat;
+  //   background-size: cover !important;
     height: 100vh;
+    background-color: rgba(200,200,200,0.15);
   }
 
 .page-element{

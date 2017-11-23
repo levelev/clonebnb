@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
-    <%= csrf_meta_tags %>
-    <%= action_cable_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-  </head>
-  <body class="<%= controller.controller_name %>">
-    <%= render 'shared/navbar' %>
-    <%= yield %>
-    <%= javascript_include_tag 'application' %>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Find Local Services</title>
+  <%= csrf_meta_tags %>
+  <%= action_cable_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+</head>
+<body class="<%= controller.controller_name %>">
+  <%= render 'shared/navbar' %>
+  <%= yield %>
+  <%= yield(:before_js) %>
+  <%= javascript_include_tag 'application' %>
+  <%= yield(:after_js) %>
+
+</body>
+
 </html>
