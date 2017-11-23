@@ -6,7 +6,7 @@
     <%= f.input :category, collection: [['Please select category',''], ['Handwerksleistungen', 'Handwerksleistungen'], ['Reinigung', 'Reinigung'], ['Umzüge', 'Umzüge']], label: false, selected: params[:search][:category] %>
   <%= f.input :city, label: false, placeholder: 'City', value: params[:search][:city] %>
   <%= f.input :price, label: false, placeholder: 'Max. price', value: params[:search][:price] %>
-  <%= f.submit 'Search', class: 'btn btn-primary button-search' %>
+  <%= f.submit 'Search', class: 'btn btn-info button-search' %>
   <% end %>
 </div>
 
