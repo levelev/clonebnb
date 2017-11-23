@@ -36,6 +36,7 @@ end
 10.times do
   @identifier_babysitter = 1 if @identifier_babysitter == 10
   r = Listing.create!(
+
     title: @babysitter.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_babysitter + 1}]/article/section[2]/h2").text.strip,
     price: @babysitter.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_babysitter + 1}]/article/section[3]/strong").text.strip,
     description: @babysitter.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_babysitter + 1}]/article/section[2]/p[1]/text()").text.strip,
@@ -44,8 +45,16 @@ end
 
     category: "Child Care",
     user_id: rand(1..10),
+
+
+    r.address = "#{r.zip} #{r.city} Germany"
+    r.save
+
     remote_photo_url: @babysitter.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_babysitter + 1}]/article/section[1]/div").attr("data-imgsrc").try(:value).try(:gsub, "9.JPG", "72.JPG"),
 
     )
+    r.address = "#{r.zip} #{r.city} Germany"
+    r.save
   @identifier_babysitter += 1
+
 end
