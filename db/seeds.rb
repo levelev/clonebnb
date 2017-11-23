@@ -29,9 +29,11 @@ end
 
 @identifier_babysitter = 1
 @identifier_repairs = 1
-@identifier_repairs = 1
+@identifier_cleaning = 1
 
 # Parsing per category and storage in string
+
+# Babysitter
 
 10.times do
   @identifier_babysitter = 1 if @identifier_babysitter == 10
@@ -57,4 +59,42 @@ end
     r.save
   @identifier_babysitter += 1
 
+end
+
+# Repairs
+
+10.times do
+  @identifier_repairs = 1 if @identifier_repairs == 10
+  r = Listing.create!(
+    title: @repairs.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_repairs + 1}]/article/section[2]/h2").text.strip,
+    price: @repairs.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_repairs + 1}]/article/section[3]/strong").text.strip,
+    description: @repairs.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_repairs + 1}]/article/section[2]/p[1]/text()").text.strip,
+    zip: @repairs.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_repairs + 1}]/article/section[3]/text()[1]").text.strip.to_i,
+    city: "Berlin",
+
+    category: "Repairs",
+    user_id: rand(1..10),
+    remote_photo_url: @repairs.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_repairs + 1}]/article/section[1]/div").attr("data-imgsrc").try(:value).try(:gsub, "9.JPG", "72.JPG"),
+
+    )
+  @identifier_repairs += 1
+end
+
+# Cleaning
+
+10.times do
+  @identifier_cleaning = 1 if @identifier_cleaning == 10
+  r = Listing.create!(
+    title: @cleaning.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_cleaning + 1}]/article/section[2]/h2").text.strip,
+    price: @cleaning.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_cleaning + 1}]/article/section[3]/strong").text.strip,
+    description: @cleaning.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_cleaning + 1}]/article/section[2]/p[1]/text()").text.strip,
+    zip: @cleaning.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_cleaning + 1}]/article/section[3]/text()[1]").text.strip.to_i,
+    city: "Berlin",
+
+    category: "Cleaning",
+    user_id: rand(1..10),
+    remote_photo_url: @cleaning.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_cleaning + 1}]/article/section[1]/div").attr("data-imgsrc").try(:value).try(:gsub, "9.JPG", "72.JPG"),
+
+    )
+  @identifier_cleaning += 1
 end
