@@ -47,18 +47,11 @@ end
 
     category: "Child Care",
     user_id: rand(1..10),
-
-
-    r.address = "#{r.zip} #{r.city} Germany"
-    r.save
-
     remote_photo_url: @babysitter.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_babysitter + 1}]/article/section[1]/div").attr("data-imgsrc").try(:value).try(:gsub, "9.JPG", "72.JPG"),
-
     )
     r.address = "#{r.zip} #{r.city} Germany"
     r.save
   @identifier_babysitter += 1
-
 end
 
 # Repairs
@@ -77,6 +70,8 @@ end
     remote_photo_url: @repairs.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_repairs + 1}]/article/section[1]/div").attr("data-imgsrc").try(:value).try(:gsub, "9.JPG", "72.JPG"),
 
     )
+    r.address = "#{r.zip} #{r.city} Germany"
+    r.save
   @identifier_repairs += 1
 end
 
@@ -94,7 +89,8 @@ end
     category: "Cleaning",
     user_id: rand(1..10),
     remote_photo_url: @cleaning.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_cleaning + 1}]/article/section[1]/div").attr("data-imgsrc").try(:value).try(:gsub, "9.JPG", "72.JPG"),
-
     )
+    r.address = "#{r.zip} #{r.city} Germany"
+    r.save
   @identifier_cleaning += 1
 end
