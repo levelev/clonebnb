@@ -11,6 +11,7 @@ gem 'devise'
 gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
 gem 'omniauth-facebook'
+gem "coffee-rails"
 
 
 
@@ -23,6 +24,14 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 
+gem "geocoder"
+gem "gmaps4rails"
+
+
+source "https://rails-assets.org" do
+  gem "rails-assets-underscore"
+end
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
@@ -31,3 +40,5 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+
