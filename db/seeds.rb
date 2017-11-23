@@ -42,7 +42,7 @@ end
     title: @babysitter.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_babysitter + 1}]/article/section[2]/h2").text.strip,
     price: @babysitter.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_babysitter + 1}]/article/section[3]/strong").text.strip,
     description: @babysitter.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_babysitter + 1}]/article/section[2]/p[1]/text()").text.strip,
-    zip: @babysitter.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_babysitter + 1}]/article/section[3]/text()[1]").text.strip.to_i,
+    zip: @babysitter.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_babysitter + 1}]/article/section[3]/text()[3]").text.strip.to_i,
     city: "Berlin",
 
     category: "Child Care",
@@ -62,7 +62,7 @@ end
     title: @repairs.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_repairs + 1}]/article/section[2]/h2").text.strip,
     price: @repairs.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_repairs + 1}]/article/section[3]/strong").text.strip,
     description: @repairs.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_repairs + 1}]/article/section[2]/p[1]/text()").text.strip,
-    zip: @repairs.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_repairs + 1}]/article/section[3]/text()[1]").text.strip.to_i,
+    zip: @repairs.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_repairs + 1}]/article/section[3]/text()[3]").text.strip.to_i,
     city: "Berlin",
 
     category: "Repairs",
@@ -83,7 +83,7 @@ end
     title: @cleaning.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_cleaning + 1}]/article/section[2]/h2").text.strip,
     price: @cleaning.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_cleaning + 1}]/article/section[3]/strong").text.strip,
     description: @cleaning.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_cleaning + 1}]/article/section[2]/p[1]/text()").text.strip,
-    zip: @cleaning.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_cleaning + 1}]/article/section[3]/text()[1]").text.strip.to_i,
+    zip: @cleaning.xpath("//*[@id='srchrslt-adtable']/li[#{@identifier_cleaning + 1}]/article/section[3]/text()[3]").text.strip.to_i,
     city: "Berlin",
 
     category: "Cleaning",
