@@ -1,5 +1,8 @@
-<div class="map_box">
-  <h3><%= listing.title %></h3>
+<div style="width: 170px;" class="map_box">
+  <h5 style="font-size: 15px;"><%= listing.title %></h5>
+  <img src="<%= listing.photo %>" height="80px">
   <p><%= listing.zip %></p>
-  <%= link_to "Details", listing_path(listing), target: :blank, class: "btn btn-warning" %>
+  <div>
+  <%= link_to "Details", listing_path(listing), target: :blank, class: "btn btn-warning details-button" %>
+  </div>
 </div>
