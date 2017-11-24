@@ -1,12 +1,11 @@
-<div class="wrapper">
   <div class="container">
     <div class="row">
-      <div class="col-sm-12">
-        <h1>Create a New Listing</h1>
+      <div class="col-md-8 col-md-offset-2 cardbox">
+        <h1>New Listing</h1>
         <%= render 'form', listing: @listing %>
 
-        <%= link_to 'Cancel', listings_path %>
+    <%= link_to 'Cancel', listings_path, class: "cancel"%>
       </div>
     </div>
   </div>
-</div>
+
