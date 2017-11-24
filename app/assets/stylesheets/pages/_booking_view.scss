@@ -1,0 +1,27 @@
+.book ul {
+  list-style: none;
+}
+
+
+.book{
+  background-color: white;
+  height: 70vh;
+  width: 60vw;
+  text-align: center;
+  padding-top: 110px;
+  margin-top: 15px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 15px;
+  box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.4);
+  margin-bottom: 15px;
+
+}
+
+.book li{
+  padding: 5px;
+}
+
+.success{
+  border-radius: 7px;
+}
