@@ -3,31 +3,36 @@
 
     <div class="box">
       <div class="row">
-        <div class="col-md-6">
-          <%= cl_image_tag @listing.photo, size: "450x450"%>
-        </div>
-
-
-        <div class="col-md-6">
-
-          <h2>
-            <%= @listing.title %>
-          </h2>
-
-          <h2>
-            <%= @listing.price %>€
-          </h2>
-
-          <p>
-            <strong>Description:</strong>
-            <%= @listing.description %>
-          </p>
-          <%= render "booking_form" %>
-
-        </div>
+       <div class="page-element backbutton">
+        <%= link_to listings_path do%>
+        <p>Back</p>
+        <% end %>
+      </div>
+      <div class="col-md-6 book-background">
+        <%= cl_image_tag @listing.photo, size: "450x450"%>
       </div>
 
+
+      <div class="col-md-6">
+
+        <h2>
+          <%= @listing.title %>
+        </h2>
+
+        <h2>
+          <%= @listing.price %>€
+        </h2>
+
+        <p>
+          <strong>Description:</strong>
+          <%= @listing.description %>
+        </p>
+        <%= render "booking_form" %>
+
+      </div>
     </div>
+
   </div>
+</div>
 </div>
 
