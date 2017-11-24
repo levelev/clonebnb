@@ -1,19 +1,21 @@
 <%= simple_form_for(@listing) do |f| %>
 <%= f.error_notification %>
 
-<div class="form-inputs">
-  <%= f.input :title %>
-  <%= f.input :category %>
-  <%= f.input :description, as: :text %>
-  <%= f.input :city %>
-  <%= f.input :zip %>
-  <%= f.input :price %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
 
-</div>
-<div class="form-actions">
-  <%= f.button :submit %>
-</div>
+
+  <div class="form-inputs">
+    <%= f.input :title, required: false%>
+    <%= f.input :category, required: false %>
+    <%= f.input :description, as: :text, required: false %>
+    <%= f.input :city, required: false %>
+    <%= f.input :zip, required: false %>
+    <%= f.input :price, required: false %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-info", value:"Create"%>
+  </div>
 
 <% end %>
